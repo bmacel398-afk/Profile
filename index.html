@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Macel Ray Bendanillo</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<div id="particles-js"></div>
+<div id="loader"><div class="spinner"></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    color: { value: "#C9A84C" },
+    size: { value: 2, random: true },
+    move: { speed: 0.6 },
+    line_linked: { enable: true, color: "#C9A84C", opacity: 0.08 },
+    opacity: { value: 0.15 }
+  }
+});
+</script>
+
+<!-- Cursor layers -->
+<div class="cursor-aura"></div>
+<div class="cursor-ring"></div>
+<div class="cursor-bracket"></div>
+<div class="cursor-orbit"></div>
+<div class="cursor-pulse"></div>
+<div class="cursor-dot"></div>
+
+<!-- Lightbox modal -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<!-- Floating icons -->
+<div class="floating-icons">
+    <i class="fab fa-html5"></i>
+    <i class="fab fa-css3-alt"></i>
+    <i class="fab fa-js"></i>
+    <i class="fab fa-python"></i>
+    <i class="fas fa-robot"></i>
+</div>
+
+<!-- AI Chat -->
+<div class="chat-button">✧</div>
+<div class="chat-box">
+    <div class="chat-header">
+        AI Assistant
+        <button class="chat-close-btn" id="chatCloseBtn">&times;</button>
+    </div>
+    <div class="chat-messages"></div>
+    <div class="chat-input-row">
+        <input type="text" id="chatInput" placeholder="Ask me something...">
+        <button id="chatSendBtn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<body>
+
+<!-- ══════════ HEADER ══════════ -->
+<header id="navbar">
+    <div class="logo" id="logoHome">M.Ray</div>
+    <nav>
+        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="skills">Skills</a>
+        <a href="#" data-page="projects">CS Projects</a>
+        <a href="#" data-page="experience">Experience</a>
+        <a href="#" data-page="gallery">CS Gallery</a>
+    </nav>
+    <button id="themeToggle">💡</button>
+</header>
+
+<!-- ══════════ PAGE: HOME (Hero) ══════════ -->
+<div id="page-home" class="page active">
+    <section class="hero">
+        <div class="hero-content">
+            <div class="profile-container">
+                <img id="profilePreview" src="profile.jpg" class="profile-img" alt="">
+                <div class="profile-buttons">
+                    <label for="uploadProfile" class="upload-btn">Upload</label>
+                    <input type="file" id="uploadProfile" accept="image/*" hidden>
+                    <button id="deleteProfile" class="profile-delete-btn">Delete</button>
+                </div>
+            </div>
+            <div class="hero-text">
+                <h1>Macel Ray Bendanillo</h1>
+                <h2><span id="typing"></span></h2>
+                <p>STUDENT PORTFOLIO</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary nav-link" data-page="projects">View My Work</a>
+                    <a href="#" class="btn-outline">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ══════════ PAGE: ABOUT ══════════ -->
+<div id="page-about" class="page">
+    <section class="page-section">
+        <div class="page-header">
+            <h2>About Me</h2>
+            <p class="page-subtitle">Get to know me</p>
+        </div>
+        <div class="about-content">
+            <p class="about-intro">
+                Hi! I'm Macel Ray Bendanillo. I am learning web development and I enjoy building
+                simple and functional websites. I am continuously improving my skills in
+                HTML, CSS, and JavaScript.
+            </p>
+            <div class="about-cards">
+                <div class="about-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Education</h3>
+                    <p>Computer Science — CETA Department</p>
+                    <p2>University of the Visayas</p2>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Focus</h3>
+                    <p>Full Stack Web Development &amp; AI</p>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-star"></i>
+                    <h3>Status</h3>
+                    <p>Student Portfolio — 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ══════════ PAGE: SKILLS ══════════ -->
+<div id="page-skills" class="page">
+    <section class="page-section">
+        <div class="page-header">
+            <h2>Technical Skills</h2>
+            <p class="page-subtitle">What I work with</p>
+        </div>
+
+        <div class="skills-wrapper">
+            <div class="skills-group">
+                <h3 class="skills-group-title">Programming Languages</h3>
+                <div class="skill">
+                    <div class="skill-label"><span>HTML</span><span class="skill-pct">85%</span></div>
+                    <div class="progress"><div class="progress-bar" style="width:85%"></div></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-label"><span>CSS</span><span class="skill-pct">75%</span></div>
+                    <div class="progress"><div class="progress-bar" style="width:75%"></div></div>
+                </div>
+                <div class="skill">
+                    <div class="skill-label"><span>JavaScript</span><span class="skill-pct">70%</span></div>
+                    <div class="progress"><div class="progress-bar" style="width:70%"></div></div>
+                </div>
+            </div>
+
+            <div class="skills-group">
+                <h3 class="skills-group-title">What I Do</h3>
+                <div class="services-container">
+                    <div class="service-box">
+                        <i class="fas fa-globe"></i>
+                        <h3>Web Development</h3>
+                        <p>I create responsive and modern websites using clean code.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fas fa-robot"></i>
+                        <h3>AI Integration</h3>
+                        <p>I build AI-powered solutions for real-world applications.</p>
+                    </div>
+                    <div class="service-box">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>UI Optimization</h3>
+                        <p>I design smooth user experiences with performance in mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ══════════ PAGE: CS PROJECTS ══════════ -->
+<div id="page-projects" class="page">
+    <section class="page-section">
+        <div class="page-header">
+            <h2>CS Projects</h2>
+            <p class="page-subtitle">My work &amp; builds</p>
+        </div>
+
+        <div class="project-block">
+            <h3 class="project-block-title">AI SaaS Platform</h3>
+            <label for="uploadSaas" class="upload-btn"><i class="fas fa-plus"></i> Add Image</label>
+            <input type="file" id="uploadSaas" accept="image/*" hidden>
+            <div class="project-images" id="saasImages"></div>
+        </div>
+
+        <div class="project-block">
+            <h3 class="project-block-title">Workout AI Tracker</h3>
+            <label for="uploadWorkout" class="upload-btn"><i class="fas fa-plus"></i> Add Image</label>
+            <input type="file" id="uploadWorkout" accept="image/*" hidden>
+            <div class="project-images" id="workoutImages"></div>
+        </div>
+
+        <div class="project-block">
+            <h3 class="project-block-title">Certification System</h3>
+            <label for="uploadCert" class="upload-btn"><i class="fas fa-plus"></i> Add Image</label>
+            <input type="file" id="uploadCert" accept="image/*" hidden>
+            <div class="project-images" id="certImages"></div>
+        
+            <div style="margin-bottom:30px;">
+                <button id="addProjectBtn" class="btn-primary">
+                    + Create New Project
+                </button>
+            </div>
+            
+            <div id="dynamicProjects"></div>
+        </div>
+    </section>
+</div>
+
+<!-- ══════════ PAGE: EXPERIENCE ══════════ -->
+<div id="page-experience" class="page">
+    <section class="page-section">
+        <div class="page-header">
+            <h2>Experience</h2>
+            <p class="page-subtitle">My professional journey</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Frontend Developer</h3>
+                    <span>2025</span>
+                    <p>Freelance</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Backend Developer</h3>
+                    <span>2025</span>
+                    <p>Freelance</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Web Developer Intern</h3>
+                    <span>2024</span>
+                    <p>Company Name</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ══════════ PAGE: CS GALLERY ══════════ -->
+<div id="page-gallery" class="page">
+    <section class="page-section">
+        <div class="page-header">
+            <h2>CS Gallery</h2>
+            <p class="page-subtitle">Photos &amp; memories</p>
+        </div>
+
+        <div class="gallery-controls">
+            <div class="gallery-upload-group">
+                <label for="galleryUploadImg" class="gallery-upload-btn gallery-upload-img-btn">
+                    <i class="fas fa-image"></i> Add Photos
+                </label>
+                <input type="file" id="galleryUploadImg" accept="image/*" multiple hidden>
+
+                <label for="galleryUploadVid" class="gallery-upload-btn gallery-upload-vid-btn">
+                    <i class="fas fa-video"></i> Add Videos
+                </label>
+                <input type="file" id="galleryUploadVid" accept="video/*" multiple hidden>
+            </div>
+            <span class="gallery-count" id="galleryCount">0 items</span>
+        </div>
+
+        <div class="gallery-container" id="gallerySlider">
+            <button class="arrow left" id="galleryLeft">&#10094;</button>
+            <div class="gallery" id="galleryTrack"></div>
+            <button class="arrow right" id="galleryRight">&#10095;</button>
+            <div class="gallery-indicator" id="galleryIndicator"></div>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+
+        <div class="gallery-empty" id="galleryEmpty">
+            <i class="fas fa-images"></i>
+            <p>Add photos &amp; videos above, or drag &amp; drop here</p>
+        </div>
+    </section>
+</div>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+    <p>© 2026 Macel Ray Bendanillo. All Rights Reserved.</p>
+    <div class="social-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
